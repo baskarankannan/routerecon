@@ -71,7 +71,7 @@ captures/
 .externalNativeBuild
 
 # Google Services (e.g. APIs or Firebase)
-google-services.json
+#google-services.json
 
 # Freeline
 freeline.py
@@ -147,7 +147,7 @@ atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
-fabric.properties
+#fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
