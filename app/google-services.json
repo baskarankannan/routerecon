@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "954621260458",
+    "firebase_url": "https://route-recon-12a21.firebaseio.com",
+    "project_id": "route-recon-12a21",
+    "storage_bucket": "route-recon-12a21.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954621260458:android:224c83cb32e78970",
+        "android_client_info": {
+          "package_name": "com.techacsent.route_recon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954621260458-blmiu5l6f0jnsa0lvbglasj40qtehohm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techacsent.route_recon",
+            "certificate_hash": "a6149db328f4af384aaa83731a30cad0c59b1d33"
+          }
+        },
+        {
+          "client_id": "954621260458-eebv37tegd2t9ke121nh5an82scq4e0m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKeb52XTyfFw9ddfs8GtBbfVvz0tsJEXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954621260458-eebv37tegd2t9ke121nh5an82scq4e0m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "954621260458-bv88tc6bd59pio7n0sb5epb63he3ojse.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.routerecon.routerecon"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
