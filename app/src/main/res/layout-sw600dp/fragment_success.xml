@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.SuccessFragment">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dialog_text_margin_top"
+        android:padding="@dimen/field_padding_margin"
+        android:text="@string/trip_created"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size" />
+
+    <ImageView
+        android:id="@+id/iv_success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/app_logo_text_margin"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_trip_updated" />
+
+    <Button
+        android:id="@+id/btn_view_trip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/app_logo_text_margin"
+        android:layout_marginTop="@dimen/app_logo_text_margin"
+        android:layout_marginRight="@dimen/app_logo_text_margin"
+        android:background="@drawable/nav_btn_bg"
+        android:text="@string/view_trip"
+        android:textColor="@color/white"
+        android:textSize="@dimen/small_text_size"/>
+
+    <Button
+        android:id="@+id/btn_share_trip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/app_logo_text_margin"
+        android:layout_marginTop="@dimen/field_padding_margin"
+        android:layout_marginRight="@dimen/app_logo_text_margin"
+        android:background="@drawable/add_waypoint_btn_bg"
+        android:text="@string/share_your_trip"
+        android:textColor="@color/white"
+        android:textSize="@dimen/small_text_size"/>
+
+
+</LinearLayout>

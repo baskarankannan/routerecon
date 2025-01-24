@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/field_padding_margin"
+    tools:context=".fragments.PostReportAlertFragment">a
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:gravity="center"
+        android:textColor="@color/red"
+        android:padding="@dimen/field_padding_margin"/>
+
+    <EditText
+        android:id="@+id/et_issue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_issue"
+        android:padding="@dimen/field_padding_margin"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:background="@null"/>
+
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:padding="@dimen/field_padding_margin"
+        android:text="@string/done"
+        android:textSize="@dimen/small_text_size"/>
+
+</LinearLayout>

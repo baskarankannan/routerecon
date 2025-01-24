@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/field_padding_margin"
+        android:text="@string/expires_in"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+    <TextView
+        android:id="@+id/tv_time_interval"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/field_padding_margin"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+    <com.techacsent.route_recon.custom_view.CustomSeekbar
+        android:id="@+id/seek_time_interval"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/field_padding_margin" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_follower"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/field_padding_margin"
+        android:padding="@dimen/field_padding_margin" />
+
+
+
+    <include layout="@layout/item_shimmer_layout" />
+
+</LinearLayout>

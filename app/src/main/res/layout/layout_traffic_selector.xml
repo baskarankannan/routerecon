@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="@dimen/field_padding_margin">
+
+    <TextView
+        android:id="@+id/tv_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
+        android:drawableStart="@drawable/ic_show_traffic"
+        android:gravity="center|start"
+        android:text="@string/text_show_traffic_in_map_scenario"
+        android:textColor="@color/black"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:visibility="gone" />
+
+    <!-- <CheckBox
+         android:id="@+id/chk_select"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignParentEnd="true"
+         android:layout_centerInParent="true"
+         android:layout_marginEnd="@dimen/field_padding_margin"
+         android:padding="@dimen/field_padding_margin"
+         android:selectAllOnFocus="true" />-->
+
+    <CheckBox
+        android:id="@+id/chk_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="@dimen/field_padding_margin"
+        android:background="@android:color/transparent"
+        android:button="@null"
+        android:drawableStart="@drawable/ic_show_traffic"
+        android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+        android:text="@string/text_show_traffic_in_map_scenario"
+        android:selectAllOnFocus="true"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+</RelativeLayout>

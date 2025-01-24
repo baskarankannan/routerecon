@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/field_padding_margin"
+    tools:context=".fragments.SaveEmergencyContactFragment">
+
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="@string/name"
+        android:padding="@dimen/field_padding_margin"
+        android:textSize="@dimen/login_sign_up_text_size"
+        tools:text="@tools:sample/cities"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/et_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="@string/phone_number"
+        android:padding="@dimen/field_padding_margin"
+        android:textSize="@dimen/login_sign_up_text_size"
+        tools:text="@tools:sample/cities"
+        android:inputType="phone"/>
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="@string/email"
+        android:padding="@dimen/field_padding_margin"
+        android:textSize="@dimen/login_sign_up_text_size"
+        tools:text="@tools:sample/cities"
+        android:inputType="textEmailAddress"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/grey"
+        android:padding="@dimen/field_padding_margin" />
+
+    <Button
+        android:id="@+id/btn_save_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="@dimen/field_padding_margin"
+        android:text="@string/text_save"
+        android:textAllCaps="false" />
+
+</LinearLayout>

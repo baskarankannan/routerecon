@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/field_padding_margin"
+    tools:context=".fragments.AddCategoryDialogFragment">
+
+
+    <EditText
+        android:id="@+id/et_category_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="@string/text_write_category"
+        android:padding="@dimen/field_padding_margin"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px" />
+
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:padding="@dimen/field_padding_margin"
+        android:text="@string/done"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+
+</LinearLayout>

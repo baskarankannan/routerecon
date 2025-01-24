@@ -1,0 +1,40 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url = uri("https://api.mapbox.com/downloads/v2/releases/maven")
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username = "mapbox"
+                password = "sk.eyJ1IjoibWV0YWxtYXRjaDEiLCJhIjoiY2x5ZDBibms1MDB4ZjJsc2h0c2xpejdreCJ9.AoNxwqBEBePxTIUV1qqthw"
+                if (password == null || password == "") {
+                    throw new GradleException("MAPBOX_DOWNLOADS_TOKEN isn't set. Set it to the project properties or to the enviroment variables.")
+                }
+            }
+        }
+        maven {
+            url 'https://repo.maven.apache.org/maven2'
+            allowInsecureProtocol = true
+        }
+        maven {
+            url = uri("https://plugins.gradle.org/m2/")
+        }
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+        maven {
+            url 'https://maven.google.com'
+        }
+        google()
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+include ':app'
+rootProject.name='Route Recon'
+

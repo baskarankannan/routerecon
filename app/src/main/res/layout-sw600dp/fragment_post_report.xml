@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/report_map_issue_bg"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:focusable="true"
+    tools:context=".fragments.PostReportFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="@dimen/field_padding_margin"
+        android:layout_marginTop="@dimen/field_padding_margin"
+        android:text="@string/send_report"
+        android:textColor="@color/white"
+        android:textSize="@dimen/big_text"
+        android:textStyle="bold"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_report_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:background="@color/trip_details_panel_bg"
+        android:padding="@dimen/field_padding_margin"
+        android:text="@string/close"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+</LinearLayout>

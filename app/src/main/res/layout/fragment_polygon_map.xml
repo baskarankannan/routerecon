@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="false"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true">
+
+
+    <fragment
+
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+
+    <include
+        layout="@layout/map_fragment_toolbar"
+        app:layout_anchor="@+id/mapView"
+        app:layout_anchorGravity="center" />
+
+
+    <TextView
+        android:id="@+id/tv_lat_long"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:padding="@dimen/field_padding_margin"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size" />
+
+    <FrameLayout
+        android:id="@+id/container_polygon_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:visibility="gone"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="@dimen/text_margin_top"
+
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

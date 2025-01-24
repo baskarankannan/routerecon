@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="false"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true">
+
+    <com.mapbox.maps.MapView
+        android:id="@+id/mapViewTrack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        mapbox:mapbox_renderTextureMode="true" />
+
+    <include layout="@layout/app_custom_toolbar" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="155dp"
+        android:layout_height="wrap_content">
+        <include layout="@layout/item_layout_search_panel_in_map" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/trip_details_panel_bg"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/rl_user_list"
+            layout="@layout/layout_shared_user_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/grey" />
+
+        <TextView
+            android:text="@string/title_track"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:text="@string/zero"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+                <TextView
+                    android:text="@string/title_time"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_distance"
+                    android:text="@string/zero"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+                <TextView
+                    android:text="@string/title_distance"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_speed"
+                    android:text="@string/zero"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+                <TextView
+                    android:text="@string/title_speed_avg"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_track_start_or_stop"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/white"
+            android:background="@color/olive_color"
+            android:layout_height="wrap_content"
+            android:text="@string/button_start"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/container_map_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:visibility="gone"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="@dimen/text_margin_top"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+    </FrameLayout>
+
+
+    <!-- <include
+         layout="@layout/layout_track_footer"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_gravity="bottom" />-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

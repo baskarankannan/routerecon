@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".fragments.ImageDisplayFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <com.techacsent.route_recon.custom_view.ZoomImageView
+        android:id="@+id/iv_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/success_image_size"
+        android:layout_gravity="center"
+        android:padding="@dimen/field_padding_margin"
+        android:scaleType="centerCrop"/>
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="@dimen/app_logo_text_margin"
+        android:layout_height="@dimen/app_logo_text_margin"
+        android:layout_gravity="center"/>
+
+</FrameLayout>

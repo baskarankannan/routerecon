@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/field_padding_margin">
+
+    <include
+        layout="@layout/layout_contact"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|start"
+        android:layout_weight="5" />
+
+    <ImageView
+        android:id="@+id/iv_call"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:padding="@dimen/field_padding_margin"
+        android:src="@drawable/ic_send_mail" />
+
+    <ImageView
+        android:id="@+id/iv_edit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:padding="@dimen/field_padding_margin"
+        android:src="@drawable/ic_contact_edit" />
+
+    <ImageView
+        android:id="@+id/iv_delete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|end"
+        android:layout_weight="1"
+        android:padding="@dimen/field_padding_margin"
+        android:src="@drawable/ic_delete_black_24dp" />
+
+
+</LinearLayout>

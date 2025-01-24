@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    tools:context=".fragments.TripDetailsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.mapbox.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        mapbox:mapbox_cameraZoom="11" />
+
+    <include
+        android:id="@+id/layout_trip_details"
+        layout="@layout/trip_details_transparent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:orientation="vertical"
+        android:padding="@dimen/field_padding_margin">
+
+        <Button
+            android:id="@+id/btn_security_checklist"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/field_padding_margin"
+            android:layout_weight="1"
+            android:background="@drawable/nav_btn_bg"
+            android:clickable="false"
+            android:text="@string/security_checklist"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/login_sign_up_text_size" />
+
+        <LinearLayout
+            android:id="@+id/selectionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_direction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/field_padding_margin"
+                android:layout_weight="1"
+                android:background="@drawable/nav_btn_bg"
+                android:clickable="false"
+                android:text="@string/direction"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/login_sign_up_text_size" />
+
+            <Button
+                android:id="@+id/btn_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/field_padding_margin"
+                android:layout_weight="1"
+                android:background="@drawable/nav_btn_bg"
+                android:text="@string/navigation"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/login_sign_up_text_size" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

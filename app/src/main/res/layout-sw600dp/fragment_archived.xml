@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:shimmer="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    tools:context=".fragments.ArchivedFragment">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_attending"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/field_padding_margin"
+        android:layout_marginTop="@dimen/field_padding_margin"
+        android:layout_marginRight="@dimen/field_padding_margin"
+        android:orientation="vertical"
+        shimmer:duration="600">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_shimmer" />
+
+            <include layout="@layout/layout_shimmer" />
+
+            <include layout="@layout/layout_shimmer" />
+
+            <include layout="@layout/layout_shimmer" />
+
+            <include layout="@layout/layout_shimmer" />
+
+            <include layout="@layout/layout_shimmer" />
+
+            <include layout="@layout/layout_shimmer" />
+
+            <include layout="@layout/layout_shimmer" />
+
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <TextView
+        android:id="@+id/tv_no_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/no_trips_available"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_archived_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/field_padding_margin"/>
+
+</FrameLayout>

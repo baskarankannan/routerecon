@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <include
+        layout="@layout/app_custom_toolbar">
+
+    </include>
+
+
+
+    <LinearLayout
+        android:id="@+id/selection_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:weightSum="5">
+
+        <ImageButton
+            android:id="@+id/menu_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/mapbox_navigation_route_layer_congestion_yellow"
+            android:src="@drawable/ic_menu_black_24dp"
+            android:tint="@color/white" />
+
+        <Button
+            android:id="@+id/btn_safe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/next_trip_colored_bg"
+            android:clickable="false"
+            android:text="@string/safe"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/login_sign_up_text_size" />
+
+        <Button
+            android:id="@+id/btn_landmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/pending_unselected"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/landmark"
+            android:textAllCaps="false"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/login_sign_up_text_size" />
+
+        <Button
+            android:id="@+id/btn_hazard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/pending_unselected"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/text_hazard"
+            android:textAllCaps="false"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/login_sign_up_text_size" />
+
+        <Button
+            android:id="@+id/btn_danger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/last_trip_bg"
+            android:text="@string/danger"
+            android:textAllCaps="false"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/login_sign_up_text_size" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutHazardConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/imageViewHazardConfirm"
+            android:layout_width="@dimen/dialog_text_margin_top"
+            android:layout_height="@dimen/dialog_text_margin_top"
+            android:layout_gravity="end|center"
+            android:layout_margin="@dimen/padding_top"
+            android:src="@drawable/ic_hazard_confirm" />
+
+        <ImageView
+            android:id="@+id/imageViewHazardCancel"
+            android:layout_width="@dimen/dialog_text_margin_top"
+            android:layout_height="@dimen/dialog_text_margin_top"
+            android:layout_gravity="end|center"
+            android:layout_margin="@dimen/padding_top"
+            android:src="@drawable/ic_hazard_cancel" />
+
+          </LinearLayout>
+
+</LinearLayout>

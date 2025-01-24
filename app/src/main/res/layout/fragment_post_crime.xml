@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/field_padding_margin"
+    tools:context=".fragments.PostCrimeFragment">
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="@dimen/thumb_size"
+        android:layout_height="@dimen/thumb_size"
+        android:contentDescription="@string/feedback_road_closure"
+        android:src="@drawable/ic_close_black_24dp" />
+
+    <EditText
+        android:id="@+id/et_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/field_padding_margin"
+        android:autofillHints="@string/address"
+        android:background="@drawable/plain_et_bg"
+        android:hint="@string/address"
+        android:inputType="text"
+        android:padding="@dimen/field_padding_margin"
+        android:textSize="@dimen/login_sign_up_text_size"
+        tools:text="@tools:sample/lorem" />
+
+    <EditText
+        android:id="@+id/et_full_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/field_padding_margin"
+        android:autofillHints="@string/full_address"
+        android:background="@drawable/plain_et_bg"
+        android:hint="@string/full_address"
+        android:inputType="text"
+        android:padding="@dimen/field_padding_margin"
+        android:textSize="@dimen/login_sign_up_text_size"
+        tools:text="@tools:sample/cities" />
+
+    <EditText
+        android:id="@+id/et_report_description"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_size"
+        android:layout_marginTop="@dimen/field_padding_margin"
+        android:autofillHints="@string/description"
+        android:background="@drawable/plain_et_bg"
+        android:gravity="top"
+        android:hint="@string/description"
+        android:inputType="text"
+        android:padding="@dimen/field_padding_margin"
+        android:textSize="@dimen/login_sign_up_text_size"
+        tools:text="@tools:sample/us_zipcodes" />
+
+    <Button
+        android:id="@+id/btn_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/field_padding_margin"
+        android:background="@drawable/add_waypoint_btn_bg"
+        android:textSize="@dimen/small_text_size"
+        android:text="@string/ok"/>
+
+
+</LinearLayout>

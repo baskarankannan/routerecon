@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    tools:context=".fragments.TripsFragment">
+
+    <include
+        android:id="@+id/app_custom_toolbar"
+        layout="@layout/app_custom_toolbar" />
+
+    <LinearLayout
+        android:id="@+id/selectionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:orientation="horizontal"
+        android:padding="@dimen/field_padding_margin"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_custom_toolbar">
+
+        <Button
+            android:id="@+id/btn_next_trip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_select_left"
+            android:clickable="false"
+            android:text="@string/next_trip"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/login_sign_up_text_size" />
+
+        <Button
+            android:id="@+id/btn_last_trip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_unselect_right"
+            android:text="@string/last_trip"
+            android:textAllCaps="false"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/login_sign_up_text_size" />
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/trip_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectionLayout" />
+
+
+    <ImageButton
+        android:id="@+id/map_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        android:src="@drawable/mapicon_1"
+        android:backgroundTint="#6B000000"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

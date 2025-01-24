@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    tools:context=".fragments.FriendsFragment">
+
+    <LinearLayout
+        android:id="@+id/selectionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:orientation="horizontal"
+        android:padding="@dimen/field_padding_margin"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/btn_followers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/next_trip_colored_bg"
+            android:clickable="false"
+            android:text="@string/followers"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/login_sign_up_text_size" />
+
+        <Button
+            android:id="@+id/btn_pending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/pending_unselected"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/pending"
+            android:textAllCaps="false"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/login_sign_up_text_size" />
+
+        <Button
+            android:id="@+id/btn_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/last_trip_bg"
+            android:text="@string/following"
+            android:textAllCaps="false"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/login_sign_up_text_size" />
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/item_route_name" />
+
+    <include layout="@layout/item_route_starting_point" />
+
+    <include layout="@layout/item_route_destination_point" />
+
+    <include layout="@layout/item_route_begins" />
+
+    <include layout="@layout/item_route_ends" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/field_padding_margin"
+        android:background="@drawable/nav_btn_bg"
+        android:padding="@dimen/field_padding_margin"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+
+</LinearLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="false"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    tools:context=".fragments.WaypointFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
+
+        <com.mapbox.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <include layout="@layout/item_confirmation_layout" />
+
+        <include layout="@layout/item_map_style_chooser_layout" />
+
+        <include layout="@layout/item_waypoint_footer_layout" />
+
+        <include
+            layout="@layout/layout_hazard_confirm_trip_create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:layout_marginBottom="130dp" />
+
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/search_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/ic_map_search" />
+
+        <include
+            android:id="@+id/waypoint_footer"
+            layout="@layout/create_trip_waypoint_footer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/success_image_size"
+            android:layout_gravity="bottom"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_suggestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="@dimen/field_padding_margin"
+            android:text="@string/marker_suggestion"
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_text_size"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_lat_lon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:padding="@dimen/field_padding_margin"
+            android:textColor="@color/black"
+            android:textSize="@dimen/small_text_size" />
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/container_way_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:visibility="gone"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="@dimen/text_margin_top"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+    </FrameLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

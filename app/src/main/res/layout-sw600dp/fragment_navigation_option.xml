@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.NavigationOptionFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/tv_share_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:padding="@dimen/field_padding_margin"
+        android:text="@string/share_live_location"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tv_nav_cur_pos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:padding="@dimen/field_padding_margin"
+        android:text="@string/nav_from_current_pos"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tv_nav_start_pos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:padding="@dimen/field_padding_margin"
+        android:text="@string/nav_from_start_pos"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:textColor="@color/black"/>
+
+</LinearLayout>

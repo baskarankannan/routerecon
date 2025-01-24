@@ -1,0 +1,76 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.techacsent.route_recon.activity.LoginActivity">
+
+    <item
+        android:id="@+id/action_maps"
+        android:icon="@drawable/ic_map_black_24dp"
+        android:orderInCategory="0"
+        android:title="@string/maps"
+        app:showAsAction="ifRoom" />
+
+
+    <item
+        android:id="@+id/action_trips"
+        android:icon="@drawable/ic_car_black_24dp"
+        android:orderInCategory="1"
+        android:title="@string/trips"
+        app:showAsAction="ifRoom" />
+
+    <!--<item
+        android:id="@+id/action_trips"
+        android:orderInCategory="0"
+        android:title="@string/trips"
+        android:icon="@drawable/ic_car_black_24dp"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_maps"
+        android:orderInCategory="1"
+        android:title="@string/maps"
+        android:icon="@drawable/ic_map_black_24dp"
+        app:showAsAction="ifRoom" />-->
+    <item
+        android:id="@+id/action_shared"
+        android:icon="@drawable/ic_shared_01"
+        android:orderInCategory="2"
+        android:title="@string/shared"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_tracker"
+        android:icon="@drawable/ic_tracker_black_24dp"
+        android:orderInCategory="3"
+        android:title="@string/tracker"
+        app:showAsAction="ifRoom" />
+ <!--   <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_settings_01"
+        android:orderInCategory="4"
+        android:title="@string/settings"
+        android:visible="false"
+
+       app:showAsAction="ifRoom" />-->
+<!--
+    <item
+        android:id="@+id/action_tracker_bottom"
+        android:icon="@drawable/ic_settings_01"
+        android:orderInCategory="4"
+        android:title="@string/tracker_bottom_nav_label"
+        android:visible="false"
+        app:showAsAction="ifRoom" />-->
+
+   <!-- <item
+        android:id="@+id/action_tools"
+        android:icon="@drawable/ic_bottom_nav_tool"
+        android:orderInCategory="4"
+        android:title="@string/tools"
+        android:visible="false"
+        app:showAsAction="ifRoom" />-->
+
+    <item
+        android:id="@+id/action_track_bottom"
+        android:icon="@drawable/ic_bottom_nav_track"
+        android:orderInCategory="4"
+        android:title="@string/track"
+        app:showAsAction="ifRoom" />
+</menu>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@color/white"
+    tools:context=".fragments.NextTripFragment">
+
+
+    <include layout="@layout/app_custom_toolbar"
+        android:visibility="gone"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_next_trip_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_tracked_trip_list_history"
+        android:padding="@dimen/field_padding_margin" />
+
+    <TextView
+        android:id="@+id/tv_no_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/no_history_data_available"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:textColor="@color/orange"
+        android:visibility="gone" />
+
+</FrameLayout>

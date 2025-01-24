@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:padding="@dimen/field_padding_margin"
+    tools:context=".fragments.NoFollowersFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:padding="@dimen/field_padding_margin"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:text="@string/no_follower"
+        android:textColor="@color/red"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textSize="@dimen/big_text"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:padding="@dimen/field_padding_margin"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:text="@string/no_follower_description"
+        android:textSize="@dimen/login_sign_up_text_size"/>
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:background="@drawable/nav_btn_bg"
+        android:text="@string/ok"
+        android:textColor="@color/white"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+
+</LinearLayout>

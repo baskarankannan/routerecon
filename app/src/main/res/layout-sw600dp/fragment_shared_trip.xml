@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@color/white"
+    tools:context=".fragments.SharedTripFragment">
+
+    <include layout="@layout/app_custom_toolbar" />
+
+    <LinearLayout
+        android:id="@+id/selectionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:orientation="horizontal"
+        android:padding="@dimen/field_padding_margin"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btn_my_trip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_select_left"
+            android:clickable="false"
+            android:text="@string/being_shared"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/login_sign_up_text_size"
+            android:padding="@dimen/field_padding_margin"/>
+
+        <Button
+            android:id="@+id/btn_being_trip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_unselect_right"
+
+            android:text="@string/my_trips"
+            android:textAllCaps="false"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/login_sign_up_text_size"
+            android:padding="@dimen/field_padding_margin"/>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/shared_trip_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7" />
+
+</LinearLayout>

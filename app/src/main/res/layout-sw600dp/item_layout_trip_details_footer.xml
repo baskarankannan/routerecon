@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/selectionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/btn_direction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:layout_weight="1"
+        android:background="@drawable/nav_btn_bg"
+        android:clickable="false"
+        android:text="@string/direction"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+    <Button
+        android:id="@+id/btn_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:layout_weight="1"
+        android:background="@drawable/nav_btn_bg"
+        android:text="@string/start"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+
+</LinearLayout>

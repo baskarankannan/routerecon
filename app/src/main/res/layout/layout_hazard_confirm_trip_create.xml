@@ -1,0 +1,27 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayoutHazardConfirmTripCreate"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/field_padding_margin"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <ImageView
+        android:id="@+id/imageViewHazardConfirmTripCreate"
+        android:layout_width="@dimen/dialog_text_margin_top"
+        android:layout_height="@dimen/dialog_text_margin_top"
+        android:layout_gravity="end|center"
+        android:layout_margin="@dimen/padding_top"
+        android:src="@drawable/ic_hazard_confirm" />
+
+    <ImageView
+        android:id="@+id/imageViewHazardCancelTripCreate"
+        android:layout_width="@dimen/dialog_text_margin_top"
+        android:layout_height="@dimen/dialog_text_margin_top"
+        android:layout_gravity="end|center"
+        android:layout_margin="@dimen/padding_top"
+        android:src="@drawable/ic_hazard_cancel" />
+
+</LinearLayout>

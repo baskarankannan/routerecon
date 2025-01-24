@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/padding_top">
+
+    <TextView
+        android:id="@+id/tv_trip_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawableStart="@drawable/ic_calendar"
+        android:drawablePadding="@dimen/padding_top"
+        android:gravity="center"
+        android:maxLines="1"
+        android:padding="@dimen/padding_top"
+        android:textColor="@color/black"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+    <TextView
+        android:id="@+id/tv_trip_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/field_padding_margin"
+        android:drawableStart="@drawable/ic_watch"
+        android:drawablePadding="@dimen/padding_top"
+        android:gravity="center"
+        android:maxLines="1"
+        android:padding="@dimen/padding_top"
+        android:textColor="@color/black"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+    <include layout="@layout/item_action_panel" />
+
+</LinearLayout>

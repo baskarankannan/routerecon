@@ -1,0 +1,232 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 35
+    defaultConfig {
+        applicationId "com.techacsent.route_recon"
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode 10
+        versionName "1.10"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+
+        Properties properties = new Properties()
+
+        if (rootProject.file("local.properties").exists()) {
+            properties.load(rootProject.file("local.properties").newDataInputStream())
+        }
+
+        // Inject the Maps API key into the manifest
+        manifestPlaceholders = [ mapsApiKey : properties.getProperty("MAPS_API_KEY", "") ]
+
+
+        applicationVariants.all { variant ->
+            variant.outputs.all {
+                def flavor = variant.name
+                def versionName = variant.versionName
+                def appName = "Route recon"
+                outputFileName = "${appName}_${flavor}_${versionName}.apk"
+            }
+        }
+
+    }
+
+
+    signingConfigs {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        def alias = properties.getProperty("alias")
+        def storePass = properties.getProperty("storePassword")
+        def keyPass = properties.getProperty("keyPassword")
+        def filePath = properties.getProperty("storeFile")
+
+
+      /*  key {
+            keyAlias alias
+            keyPassword storePass
+            storeFile file(filePath)
+            storePassword keyPass
+        }*/
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue 'string', 'build_type', '1'
+            //signingConfig signingConfigs.key
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+            //applicationIdSuffix ".debug"
+            resValue 'string', 'build_type', '2'
+        }
+       /* repositories {
+            maven { url 'https://oss.sonatype.org/content/repositories/ksoap2-android-releases/' }
+            maven { url 'https://jitpack.io' }
+        }*/
+    }
+    flavorDimensions "Distribution"
+
+    productFlavors {
+        prod {
+            dimension "Distribution"
+            applicationId "com.techacsent.route_recon"
+            manifestPlaceholders = [package_name: "com.techacsent.route_recon"]
+            buildConfigField 'String', 'BUILD_NO', '"Version 1.0.5"'
+            buildConfigField 'String', 'BASE_URL', '"https://api.routerecon.com"'
+        }
+
+        dev {
+            dimension "Distribution"
+            applicationId "com.techacsent.route_recon"
+            manifestPlaceholders = [package_name: "com.techacsent.route_recon"]
+            buildConfigField 'String', 'BUILD_NO', '"Build no 1.0.19 (Test)"'
+            buildConfigField 'String', 'BASE_URL', '"https://devapi.routerecon.com/"'
+        }
+
+        new_endpoint {
+            dimension "Distribution"
+            applicationId "com.techacsent.route_recon"
+            manifestPlaceholders = [package_name: "com.techacsent.route_recon"]
+            buildConfigField 'String', 'BUILD_NO', '"Build no 1.0.18 (New Endpoint)"'
+            buildConfigField 'String', 'BASE_URL', '"http://3.130.34.76/"'
+        }
+    }
+    android {
+        useLibrary 'org.apache.http.legacy'
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_17
+            targetCompatibility JavaVersion.VERSION_17
+        }
+        packagingOptions {
+            exclude 'lib/arm64-v8a/libnavigator-android.so'
+        }
+    }
+    namespace 'com.techacsent.route_recon'
+
+}
+
+dependencies {
+
+   // implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'io.jsonwebtoken:jjwt:0.7.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.8.7'
+    implementation 'androidx.room:room-runtime:2.6.1'
+    implementation 'com.google.firebase:firebase-inappmessaging-display:21.0.1'
+    annotationProcessor 'androidx.room:room-compiler:2.6.1'
+    implementation 'androidx.work:work-runtime:2.10.0'
+    //implementation 'com.google.android.gms:play-services-places:16.1.0'
+    implementation('com.google.android.libraries.places:places:4.1.0') {
+        exclude group: 'com.google.guava', module: 'listenablefuture'
+    }
+    implementation 'com.google.guava:guava:27.0.1-android'
+    implementation 'com.prof18.rssparser:rssparser:1.4.4'
+
+//    implementation 'com.github.florent37:singledateandtimepicker:2.1.0'
+    implementation 'com.github.florent37:singledateandtimepicker:v2.2.2'
+
+    implementation 'org.greenrobot:eventbus:3.1.1'
+//    implementation 'com.appyvet:materialrangebar:1.4.3'
+    implementation 'com.github.oli107:material-range-bar:1.4.3'
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'androidx.paging:paging-runtime:3.3.5'
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+    implementation 'com.google.firebase:firebase-messaging:24.1.0'
+    implementation 'com.google.android.gms:play-services-auth:21.3.0'
+
+    //for showing google map
+    implementation 'com.google.android.gms:play-services-maps:19.0.0'
+    implementation 'com.android.volley:volley:1.2.1'
+
+
+
+//    implementation "com.mapbox.mapboxsdk:mapbox-android-plugin-scalebar-v8:0.1.0"
+//
+//
+    implementation "com.mapbox.mapboxsdk:mapbox-android-plugin-traffic-v7:0.8.0"
+//
+    implementation ('com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.42.6'){
+        exclude group: 'com.mapbox.mapboxsdk', module:'mapbox-android-plugin-annotation-v7'
+    }
+//
+//    //    implementation 'com.mapbox.mapboxsdk:mapbox-android-telemetry:6.1.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-telemetry:8.1.5'
+//
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-building-v9:0.7.0'
+    implementation 'com.mapbox.maps:android:11.9.1'
+    implementation 'com.mapbox.plugin:maps-annotation:11.9.1'
+    implementation 'com.mapbox.plugin:maps-scalebar:11.9.1'
+//    implementation "com.mapbox.navigationcore:navigation:v3.7.0-beta.1"
+
+//    implementation "com.mapbox.navigationcore:android:v3.7.0-beta.1"
+//    implementation "com.mapbox.navigationcore:ui-components:v3.7.0-beta.1"
+
+    implementation "com.mapbox.navigationcore:navigation:3.5.0-beta.1"
+    implementation "com.mapbox.navigationcore:android:3.5.0-beta.1"
+    implementation "com.mapbox.navigationcore:ui-components:3.3.0"
+//    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.42.6'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:9.0.0'
+//    implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-places:0.6.0'
+//    implementation 'com.mapbox.mapboxsdk:mapbox-android-accounts:0.7.0'
+//    implementation 'com.mapbox.navigator:mapbox-navigation-native:7.0.0'
+
+
+
+/*    {
+        transitive = true
+    }*/
+
+
+    implementation 'com.orhanobut:logger:2.2.0'
+//    implementation 'com.github.jumadeveloper:networkmanager:0.0.2'
+    implementation 'com.github.ArunpandiyanMurugesan:AndroidNetworkManager:0.0.2'
+
+//    implementation 'me.relex:circleindicator:1.2.2'
+    implementation 'me.relex:circleindicator:2.1.6'
+
+
+
+    /* debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3'*/
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
+    //implementation 'com.crashlytics.sdk.android:crashlytics:17.2.2'
+    implementation 'androidx.navigation:navigation-fragment:2.8.5'
+//    implementation 'com.kaopiz:kprogresshud:1.2.0'
+    implementation 'io.github.rupinderjeet:kprogresshud:1.0.0'
+
+    implementation 'com.facebook.shimmer:shimmer:0.4.0'
+//    implementation 'com.nabinbhandari.android:permissions:3.8'
+//    implementation 'com.github.ArunpandiyanMurugesan:Android-Permissions:3.8'
+    implementation 'com.github.Redman1037:Android-Permissions:3.8'
+    implementation 'com.stripe:stripe-android:16.9.0'
+
+    implementation 'com.google.maps.android:android-maps-utils:0.6.2'
+
+
+
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:rules:1.6.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.6.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+
+    //for ui test
+    implementation 'com.android.support:support-annotations:28.0.0'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+
+
+}
+apply plugin: 'com.google.gms.google-services'

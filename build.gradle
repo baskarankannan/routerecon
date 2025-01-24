@@ -1,0 +1,87 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+        jcenter() // Warning: this repository is going to shut down soon
+        /*maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://repo.maven.apache.org/maven2'
+            allowInsecureProtocol = true
+        }
+        maven {
+            url = uri("https://plugins.gradle.org/m2/")
+        }
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }*/
+      /*  maven {
+            url 'https://api.mapbox.com/downloads/v2/releases/maven'
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username = "mapbox"
+                password = project.hasProperty('MAPBOX_DOWNLOADS_TOKEN') ? project.property('MAPBOX_DOWNLOADS_TOKEN') : System.getenv('MAPBOX_DOWNLOADS_TOKEN')
+                if (password == null || password == "") {
+                    throw new GradleException("MAPBOX_DOWNLOADS_TOKEN isn't set. Set it to the project properties or to the enviroment variables.")
+                }
+            }
+        }*/
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.5.2'
+//        classpath "com.mapbox.gradle.plugins:access-token:0.4.0"
+        classpath 'com.google.gms:google-services:4.4.2'
+
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+//        google()
+//        mavenCentral()
+//        maven { url 'https://jitpack.io' }
+       /* maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://repo.maven.apache.org/maven2'
+            allowInsecureProtocol = true
+        }
+        maven {
+            url = uri("https://plugins.gradle.org/m2/")
+        }
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }*/
+        /*maven {
+            url = "http://repo.maven.apache.org/maven2"
+            allowInsecureProtocol = true
+        }*/
+//        gradlePluginPortal()
+//        maven { url 'https://mapbox.bintray.com/mapbox' }
+//        maven { url "http://oss.sonatype.org/content/repositories/snapshots/" }
+//        maven { url "https://jitpack.io" }
+
+       /* maven {
+            url 'https://api.mapbox.com/downloads/v2/releases/maven'
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username = "mapbox"
+                password = project.hasProperty('MAPBOX_DOWNLOADS_TOKEN') ? project.property('MAPBOX_DOWNLOADS_TOKEN') : System.getenv('MAPBOX_DOWNLOADS_TOKEN')
+                if (password == null || password == "") {
+                    throw new GradleException("MAPBOX_DOWNLOADS_TOKEN isn't set. Set it to the project properties or to the enviroment variables.")
+                }
+            }
+        }*/
+        
+    }
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

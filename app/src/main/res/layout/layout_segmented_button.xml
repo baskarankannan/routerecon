@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="5"
+    android:padding="@dimen/field_padding_margin"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/btn_street"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/next_trip_colored_bg"
+        android:clickable="false"
+        android:text="@string/text_street"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:maxLines="1"/>
+
+    <Button
+        android:id="@+id/btn_satellite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/pending_unselected"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/text_satellite_street"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:maxLines="1"/>
+
+    <Button
+        android:id="@+id/btn_traffic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/pending_unselected"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/text_outdoor"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:maxLines="1"/>
+
+    <Button
+        android:id="@+id/btn_outdoor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/pending_unselected"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/text_outdoor_maps"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:maxLines="1"/>
+
+    <Button
+        android:id="@+id/btn_three_d_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/last_trip_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/text_3d_maps"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:maxLines="1"/>
+
+
+</LinearLayout>

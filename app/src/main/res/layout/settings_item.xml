@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="@dimen/field_padding_margin">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/ic_trip_ends"
+            android:gravity="center|start"
+            android:text="@string/danger"
+            android:drawablePadding="5dp"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/login_sign_up_text_size" />
+
+        <TextView
+            android:id="@+id/badge_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:background="@drawable/add_contact_bg"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/small_text_size"
+            android:visibility="gone" />
+
+      <LinearLayout
+          android:gravity="end"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/buttonDecimal"
+                android:text="Decimal"
+                android:textSize="8sp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_width="60dp"
+                android:layout_height="30dp">
+
+            </Button>
+
+            <Button
+                android:id="@+id/buttonUTM"
+                android:text="UTM"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:textSize="8sp"
+                android:layout_width="50dp"
+                android:layout_height="30dp">
+
+            </Button>
+
+            <Button
+                android:visibility="gone"
+                android:id="@+id/buttonDMS"
+                android:text="DMS"
+                android:textSize="8sp"
+                android:layout_gravity="center"
+                android:layout_width="50dp"
+                android:layout_height="30dp">
+
+            </Button>
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

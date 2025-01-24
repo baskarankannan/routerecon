@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_end_point"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/field_padding_margin"
+        android:text="@string/enter_destination_point"
+        android:textColor="@color/black"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+    <TextView
+        android:id="@+id/et_destination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:drawableEnd="@drawable/ic_enter_destination"
+        android:gravity="center|start"
+        android:hint="@string/ie_destination_point"
+        android:inputType="none"
+        android:padding="@dimen/field_padding_margin"
+        android:textColorHint="@color/grey"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/grey" />
+</LinearLayout>

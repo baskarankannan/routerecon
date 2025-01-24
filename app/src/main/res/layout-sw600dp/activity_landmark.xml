@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".activity.LandmarkActivity">
+
+    <include layout="@layout/toolbar_landmark" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/field_padding_margin">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/name"
+                    android:textSize="@dimen/login_sign_up_text_size" />
+
+                <EditText
+                    android:id="@+id/et_marker_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:maxLines="2"
+                    android:textSize="@dimen/login_sign_up_text_size"
+                    tools:text="@tools:sample/us_phones" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/field_padding_margin">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/marker_address"
+                    android:textSize="@dimen/login_sign_up_text_size" />
+
+                <EditText
+                    android:id="@+id/et_marker_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:maxLines="2"
+                    android:textSize="@dimen/login_sign_up_text_size"
+                    tools:text="@tools:sample/first_names" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/field_padding_margin">
+
+                <TextView
+                    android:id="@+id/tvDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/marker_full_address"
+                    android:textSize="@dimen/login_sign_up_text_size" />
+
+                <EditText
+                    android:id="@+id/et_marker_full_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:maxLines="2"
+                    android:textSize="@dimen/login_sign_up_text_size"
+                    tools:text="@tools:sample/lorem" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_radius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/field_padding_margin">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/text_radius"
+                    android:textSize="@dimen/login_sign_up_text_size" />
+
+                <EditText
+                    android:id="@+id/et_marker_radius"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:inputType="numberDecimal"
+                    android:maxLines="2"
+                    android:textSize="@dimen/login_sign_up_text_size"
+                    tools:text="@tools:sample/lorem" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_add_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:padding="@dimen/field_padding_margin"
+                android:text="@string/add_photo"
+                android:textColor="@color/orange"
+                android:textStyle="bold"
+                android:textSize="@dimen/login_sign_up_text_size" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_landmark_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/field_padding_margin"
+                tools:itemCount="5"
+                tools:listitem='@layout/landmark_image_item' />
+
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/field_padding_margin"
+                android:background="@drawable/add_waypoint_btn_bg"
+                android:text="@string/delete"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/login_sign_up_text_size" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

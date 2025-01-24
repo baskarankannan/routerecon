@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="login_sign_up_text_size">15sp</dimen>
+    <dimen name="field_padding_margin">10dp</dimen>
+    <dimen name="big_text">20sp</dimen>
+    <dimen name="text_margin_top">150dp</dimen>
+    <dimen name="app_logo_text_margin">30dp</dimen>
+    <dimen name="image_size">100dp</dimen>
+    <dimen name="dialog_text_margin_top">50dp</dimen>
+    <dimen name="share_trip_footer_height_width">60dp</dimen>
+    <dimen name="small_text_size">10sp</dimen>
+    <dimen name="text_size">20sp</dimen>
+    <dimen name="thumb_size">24dp</dimen>
+    <dimen name="logo_height_width">150dp</dimen>
+    <dimen name="image_24_dp">24dp</dimen>
+    <dimen name="success_image_size">300dp</dimen>
+    <dimen name="landmark_image_size">200dp</dimen>
+    <dimen name="category_popup_width">160dp</dimen>
+    <dimen name="shared_user">20dp</dimen>
+    <dimen name="padding_top">5dp</dimen>
+    <dimen name="negative_margin_bottom">-8dp</dimen>
+    <dimen name="height_2_dp">2dp</dimen>
+
+
+
+    <!--For Larger Screen-->
+
+    <dimen name="x_large_login_sign_up_text_size">25sp</dimen>
+
+
+    <dimen name="design_bottom_navigation_item_max_width" tools:override="true">600dp</dimen>
+    <dimen name="design_bottom_navigation_active_item_max_width" tools:override="true">600dp</dimen>
+</resources>

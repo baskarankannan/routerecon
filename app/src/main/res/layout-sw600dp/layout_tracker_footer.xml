@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/tracker_sos_footer" />
+
+    <LinearLayout
+        android:layout_width="@dimen/image_size"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray"
+            android:text="5 trial days left"
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_text_size" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:text="@string/text_upgrade"
+            android:textSize="@dimen/small_text_size" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/share_trip_btn_bg"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/rl_user_list"
+            layout="@layout/layout_shared_user_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/grey" />
+
+        <ImageView
+            android:id="@+id/iv_share_trip"
+            android:layout_width="@dimen/share_trip_footer_height_width"
+            android:layout_height="@dimen/share_trip_footer_height_width"
+            android:layout_gravity="center"
+            android:contentDescription="TODO"
+            android:src="@drawable/ic_guide_arrow" />
+
+    </LinearLayout>
+
+</LinearLayout>

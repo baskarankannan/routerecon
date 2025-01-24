@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    tools:context=".fragments.MapBottomFragment">
+
+    <include layout="@layout/item_bottom_fragment_header" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:text="@string/text_change_map_style"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <include
+        layout="@layout/layout_segmented_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_margin="@dimen/field_padding_margin" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:text="@string/text_other_option"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tv_add_marker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:gravity="center"
+        android:text="@string/text_add_marker"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_sync_map_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:drawableStart="@drawable/ic_refresh_app_color"
+        android:drawablePadding="@dimen/field_padding_margin"
+        android:gravity="center"
+        android:text="@string/text_sync_map_data"
+        android:textColor="@color/black"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+
+</LinearLayout>

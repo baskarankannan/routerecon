@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/field_padding_margin"
+    tools:context=".fragments.PostCrimeFragment">
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="@dimen/thumb_size"
+        android:layout_height="@dimen/thumb_size"
+        android:src="@drawable/ic_close_black_24dp"
+        android:contentDescription="@string/feedback_road_closure" />
+
+    <EditText
+        android:id="@+id/et_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/field_padding_margin"
+        android:background="@drawable/plain_et_bg"
+        android:hint="@string/address"
+        android:padding="@dimen/field_padding_margin"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:inputType="text"
+        android:autofillHints="@string/address" />
+
+    <EditText
+        android:id="@+id/et_full_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/field_padding_margin"
+        android:background="@drawable/plain_et_bg"
+        android:hint="@string/full_address"
+        android:padding="@dimen/field_padding_margin"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/et_report_description"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_size"
+        android:layout_marginTop="@dimen/field_padding_margin"
+        android:background="@drawable/plain_et_bg"
+        android:padding="@dimen/field_padding_margin"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:hint="@string/description"
+        android:gravity="top"
+        android:inputType="text"/>
+
+    <Button
+        android:id="@+id/btn_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/field_padding_margin"
+        android:background="@drawable/add_waypoint_btn_bg"
+        android:textSize="@dimen/small_text_size"
+        android:text="@string/ok"/>
+
+
+</LinearLayout>

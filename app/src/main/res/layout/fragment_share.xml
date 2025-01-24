@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:weightSum="9"
+    tools:context=".fragments.ShareFragment">
+
+   <!-- <CheckBox
+        android:id="@+id/chk_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/all_member"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:button="@null"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:padding="@dimen/field_padding_margin"
+        android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"/>-->
+    <CheckBox
+        android:id="@+id/chk_all"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:button="@null"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:text="@string/all_member"
+        android:padding="@dimen/app_logo_text_margin"
+        android:background="@android:color/transparent"
+        android:drawableEnd="?android:attr/listChoiceIndicatorMultiple" />
+
+    <include layout="@layout/item_shimmer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        tools:itemCount="5"
+        tools:listitem='@layout/select_user_to_share_trip'/>
+
+    <ImageButton
+        android:id="@+id/btn_share_or_add"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".8"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/ic_share_black_24dp" />
+
+</LinearLayout>

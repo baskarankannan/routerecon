@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--
+    <color name="colorPrimary">#50d2c2</color>
+-->
+    <color name="colorPrimary">#737373</color>
+
+    <color name="colorPrimaryDark">#474747</color> <!--2aa6a6-->
+    <color name="colorAccent">#474747</color>
+
+    <color name="panel_bg">#51dad9d9</color>
+    <color name="login_btn">#67c6ba</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="trip_details_panel_bg">#99000000</color>
+    <color name="report_map_issue_bg">#C4000000</color>
+    <color name="share_trip_btn_bg">#29000000</color>
+    <color name="grey">#ff787878</color>
+    <color name="red">#ff5252</color>
+    <color name="dark_green">#275151</color>
+    <color name="blue">#347fcf</color>
+    <color name="deep_red">#f53412</color>
+
+    <color name="extra_light_blue_background">#F5F8FA</color>
+    <color name="separator_gray">#c6c6c6</color>
+    <color name="white_smoke">#F5F5F5</color>
+    <color name="marker_suggestion_bg">#2959f178</color>
+    <color name="report_map_bg">#99000000</color>
+    <color name="olive_color">#76c734</color>
+    <color name="map_color">#efe9e1</color>
+    <color name="orange">#E15C26</color>
+    <color name="violet">#0B285E</color>
+    <color name="app_grey">#8c8984</color>
+    <color name="success_panel_color">#81419614</color>
+    <color name="error_panel_color">#81CE2510</color>
+    <color name="gray">#D6D1D1</color>
+
+    <color name="cornflower_blue_dark">#AA513C</color>
+    <color name="cornflower_blue_darkest">#FF5722</color>
+    <color name="cornflower_blue">#AA513C</color>
+
+
+    <color name="background_holo_light">#fff3f3f3</color>
+
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    tools:context=".fragments.MapBottomFragment">
+
+    <EditText
+        android:id="@+id/edit_text_hazard_name"
+        android:inputType="text"
+        android:layout_margin="24dp"
+        android:hint="@string/enter_name_of_hazard_zone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </EditText>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutTotalArea"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginStart="32dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/text_length"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvAreaTitle"
+            android:layout_marginStart="8dp"
+            android:text="@string/text_area"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="64dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textViewTotalLength"
+            android:text="@string/text_length"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textViewTotalArea"
+            android:layout_marginStart="8dp"
+            android:text="@string/text_area"
+            android:width="0dp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+        </TextView>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

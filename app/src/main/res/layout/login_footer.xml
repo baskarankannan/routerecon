@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:layout_marginStart="@dimen/app_logo_text_margin"
+    android:layout_marginEnd="@dimen/app_logo_text_margin"
+    android:layout_marginBottom="@dimen/field_padding_margin"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:padding="@dimen/field_padding_margin">
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/field_padding_margin"
+        android:layout_marginEnd="@dimen/field_padding_margin"
+        android:background="@color/app_grey"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:padding="@dimen/field_padding_margin"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/login_sign_up_text_size"
+      />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/field_padding_margin"
+        android:layout_marginEnd="@dimen/field_padding_margin"
+        android:background="@color/app_grey"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:padding="@dimen/field_padding_margin"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/login_sign_up_text_size"
+       />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/field_padding_margin"
+        android:layout_marginEnd="@dimen/field_padding_margin"
+        android:background="@drawable/login_btn_bg"
+        android:padding="@dimen/field_padding_margin"
+        android:text="@string/log_in"
+        android:textColor="@color/white"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+    <TextView
+        android:id="@+id/tv_forgot_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/padding_top"
+        android:text="@string/having_trouble"
+        android:textColor="@color/white"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+    <TextView
+        android:id="@+id/tv_create_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/padding_top"
+        android:textColor="@color/white"
+        android:textSize="@dimen/login_sign_up_text_size"
+        tools:text="@tools:sample/full_names" />
+
+    <TextView
+        android:id="@+id/tv_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:gravity="center"
+        android:padding="@dimen/padding_top"
+        android:textColor="@color/white"
+        android:textSize="@dimen/small_text_size"
+        tools:text="@tools:sample/full_names" />
+
+</LinearLayout>

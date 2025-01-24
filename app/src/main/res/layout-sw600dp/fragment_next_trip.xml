@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@color/white"
+    android:layout_marginBottom="90dp"
+    tools:context=".fragments.NextTripFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_send_trip_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/my_trips_item_row"
+            tools:itemCount="2"
+            android:padding="@dimen/field_padding_margin" />
+
+
+        <TextView
+            android:id="@+id/tv_upcoming_route_tittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="@string/upcoming_routes"
+            android:textSize="@dimen/login_sign_up_text_size"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_next_trip_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            tools:listitem="@layout/trip_list_row"
+            tools:itemCount="2"
+            android:padding="@dimen/field_padding_margin" />
+
+
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_no_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/no_trips_available"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:textColor="@color/orange"
+        android:visibility="gone" />
+
+</FrameLayout>

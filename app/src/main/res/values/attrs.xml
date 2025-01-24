@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TPText">
+        <attr name="customTFont" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="TPEdit">
+        <attr name="customEFont" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="TPButton">
+        <attr name="isBreadButton" format="boolean"/>
+        <attr name="buttonType" format="integer"/>
+        <attr name="customBFont" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="TPKeyboard">
+        <attr name="showAlphabet" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="TPNotificationBar">
+        <attr name="breadText" format="string"/>
+    </declare-styleable>
+</resources>

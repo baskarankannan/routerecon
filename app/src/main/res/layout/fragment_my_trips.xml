@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shimmer="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.MyTripsFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_my_trips"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/field_padding_margin"
+        tools:itemCount="5"
+        tools:listitem="@layout/my_trips_item_row" />
+
+    <include layout="@layout/item_shimmer_layout" />
+
+    <TextView
+        android:id="@+id/tv_no_trip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/text_no_shared_trip"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/login_sign_up_text_size"
+        android:visibility="gone" />
+
+</FrameLayout>

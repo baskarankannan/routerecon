@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.ShareOptionFragment">
+
+    <TextView
+        android:id="@+id/tv_share_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:drawablePadding="@dimen/field_padding_margin"
+        android:padding="@dimen/field_padding_margin"
+        android:text="@string/share_location"
+        android:textColor="@color/black"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+    <TextView
+        android:id="@+id/tv_without_share_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/field_padding_margin"
+        android:padding="@dimen/field_padding_margin"
+        android:text="@string/without_sharing_location"
+        android:textColor="@color/black"
+        android:textSize="@dimen/login_sign_up_text_size" />
+
+</LinearLayout>
