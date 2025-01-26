@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.techacsent.route_recon.R;
 import com.techacsent.route_recon.activity.LoginActivity;
 import com.techacsent.route_recon.application.RouteApplication;
@@ -107,7 +107,7 @@ public class LogoutFragment extends DialogFragment {
            if(PreferenceManager.getBool(Constant.KEY_IS_TRACKING_STARTED)) {
 
 
-               Objects.requireNonNull(getActivity()).stopService(new Intent(getActivity(), LocationServiceV2.class));
+               requireActivity().stopService(new Intent(getActivity(), LocationServiceV2.class));
 
                PreferenceManager.updateValue(Constant.KEY_IS_TRACKING_STARTED, false);
 
@@ -123,17 +123,13 @@ public class LogoutFragment extends DialogFragment {
             }
             Intent intent = new Intent(getActivity(), LoginActivity.class);
             startActivity(intent);
-            Objects.requireNonNull(getActivity()).finish();
+            requireActivity().finish();
         });
     }
 
     private void deleteToken() {
         new Thread(() -> {
-            try {
-                FirebaseInstanceId.getInstance().deleteInstanceId();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            FirebaseMessaging.getInstance().deleteToken();
         }).start();
     }
 

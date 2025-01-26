@@ -151,7 +151,7 @@ public class MyTripDescriptionFragment extends Fragment implements OnRecyclerCli
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Mapbox.getInstance(Objects.requireNonNull(getActivity()), Constant.MAPBOX_API_KEY);
+        Mapbox.getInstance(requireActivity(), Constant.MAPBOX_API_KEY);
         myTripDescriptionViewModel = ViewModelProviders.of(this).get(MyTripDescriptionViewModel.class);
         pointList = new ArrayList<>();
         initializeView(view, savedInstanceState);

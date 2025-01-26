@@ -32,7 +32,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.techacsent.route_recon.R;
 import com.techacsent.route_recon.activity.HomeActivity;
 import com.techacsent.route_recon.activity.ResetPasswordActivity;
@@ -280,8 +280,8 @@ public class LoginFragment extends Fragment {
 
     private void getServerToken() {
 
-        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(instanceIdResult -> {
-            token = instanceIdResult.getToken();
+        FirebaseMessaging.getInstance().getToken().addOnSuccessListener(instanceIdResult -> {
+            token = instanceIdResult.trim();
             Log.e("firbaseToken : ","token : "+token);
             Timber.d(token);
             //PreferenceManager.updateValue(Constant.KEY_FIREBASE_TOKEN_ID, token);

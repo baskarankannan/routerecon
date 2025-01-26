@@ -56,6 +56,7 @@ import com.google.maps.android.SphericalUtil;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
 import com.mapbox.geojson.Point;
+import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.Icon;
 import com.mapbox.mapboxsdk.annotations.IconFactory;
 import com.mapbox.mapboxsdk.annotations.Marker;
@@ -68,23 +69,17 @@ import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.location.LocationComponent;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.MapView;
-import com.mapbox.mapboxsdk.plugins.annotation.FillManager;
-import com.mapbox.mapboxsdk.plugins.annotation.FillOptions;
 import com.mapbox.mapboxsdk.plugins.building.BuildingPlugin;
 import com.mapbox.mapboxsdk.plugins.traffic.TrafficPlugin;
 
 /*import com.mapbox.pluginscalebar.ScaleBarOptions;
 import com.mapbox.pluginscalebar.ScaleBarPlugin;*/
-import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
-import com.mapbox.mapboxsdk.utils.ColorUtils;
 import com.mapbox.pluginscalebar.ScaleBarOptions;
 import com.mapbox.pluginscalebar.ScaleBarPlugin;
 import com.techacsent.route_recon.R;
 import com.techacsent.route_recon.activity.LandmarkActivity;
-import com.techacsent.route_recon.activity.TestActivity;
 import com.techacsent.route_recon.application.RouteApplication;
 import com.techacsent.route_recon.event_bus_object.ChangeMapObject;
-import com.techacsent.route_recon.event_bus_object.ChangeMapView;
 import com.techacsent.route_recon.event_bus_object.CoordinateUnitObject;
 import com.techacsent.route_recon.event_bus_object.DangerMarkerObj;
 import com.techacsent.route_recon.event_bus_object.DistanceUnitObject;
@@ -137,7 +132,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Random;
 
 import androidx.work.Data;
 import androidx.work.OneTimeWorkRequest;
@@ -238,6 +232,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Mapbox.getInstance(requireContext(), Constant.MAPBOX_API_KEY);
         if (getArguments() != null) {
             fromBtn = getArguments().getBoolean("fromBtn");
         }
@@ -252,7 +247,6 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
         return inflater.inflate(R.layout.fragment_map, container, false);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -295,10 +289,10 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     private void initializeView(Bundle savedInstanceState, View view) {
 
         mapView = view.findViewById(R.id.mapView);
+       // mapView.getMapboxMap().loadStyleUri(Style.MAPBOX_STREETS);
         mapView.onCreate(savedInstanceState);
         IconFactory iconFactory = IconFactory.getInstance(requireActivity());
         safeIcon = iconFactory.fromResource(R.drawable.safe_marker);
@@ -349,7 +343,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
 
         layoutMenuContent = view.findViewById(R.id.layout_option);
 
-        layoutInflater = (LayoutInflater) Objects.requireNonNull(getContext())
+        layoutInflater = (LayoutInflater) requireContext()
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         Snackbar.make(view, getResources().getString(R.string.marker_suggestion), Snackbar.LENGTH_INDEFINITE)
@@ -366,7 +360,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
         PreferenceManager.updateValue(Constant.KEY_IS_FROM_MAP_UI, true);
 
         bottomFragment = new MapBottomFragment();
-        FragmentTransaction ft = Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction();
+        FragmentTransaction ft = requireActivity().getSupportFragmentManager().beginTransaction();
         ft.add(R.id.container, bottomFragment);
         ft.commitNow();
         BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(bottomSheetView);
@@ -400,7 +394,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
         hazardInfoBottomFragment.setArguments(args);
 
 
-        FragmentTransaction ft = Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction();
+        FragmentTransaction ft = requireActivity().getSupportFragmentManager().beginTransaction();
 
         ft.add(R.id.container, hazardInfoBottomFragment);
         ft.commitNow();
@@ -442,7 +436,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
 
             if (type == 4) {
 
-                map.clear();
+                if(map!=null)map.clear();
                 loadMarker();
             }
             type = 1;
@@ -462,7 +456,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
 
             if (type == 4) {
 
-                map.clear();
+                if(map!=null)map.clear();
                 loadMarker();
             }
 
@@ -494,7 +488,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
 
             if (type == 4) {
 
-                map.clear();
+                if(map!=null)map.clear();
                 loadMarker();
             }
 
@@ -610,7 +604,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
 
 
 
-            if (ActivityCompat.checkSelfPermission(Objects.requireNonNull(getActivity()), Manifest.permission.ACCESS_FINE_LOCATION)
+            if (ActivityCompat.checkSelfPermission(requireActivity(), Manifest.permission.ACCESS_FINE_LOCATION)
                     != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 101);
             } else {
@@ -644,7 +638,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
             if (bottomFragment != null) {
 
                 PreferenceManager.updateValue(Constant.KEY_IS_FROM_MAP_UI, true);
-                Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction().show(bottomFragment).commit();
+                requireActivity().getSupportFragmentManager().beginTransaction().show(bottomFragment).commit();
 
             } else {
 
@@ -822,7 +816,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
                 hazardLenght = "";
                 hazardArea = "";
                 OUTER_POINTS.clear();
-                map.clear();
+                if(map!=null)map.clear();
                 type = 4;
                 loadMarker();
 
@@ -1176,7 +1170,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
         mTripMarkerGetModel.setOffset(String.valueOf(0));
         getTripMarkerList(mTripMarkerGetModel, false);
         if (bottomFragment.isVisible()) {
-            Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction().hide(bottomFragment).commit();
+            requireActivity().getSupportFragmentManager().beginTransaction().hide(bottomFragment).commit();
         }
         layoutMenuContent.setVisibility(View.VISIBLE);
 
@@ -1200,7 +1194,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
         isMarkerAdd = true;
         selectionLayout.setVisibility(View.VISIBLE);
         if (bottomFragment != null && bottomFragment.isVisible()) {
-            Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction().hide(bottomFragment).commit();
+            requireActivity().getSupportFragmentManager().beginTransaction().hide(bottomFragment).commit();
         }
         layoutMenuContent.setVisibility(View.VISIBLE);
     }
@@ -1235,11 +1229,10 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
         //fabAddressSearch.show();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void changeMapStyle(ChangeMapObject floatNumber) {
         if (floatNumber.getType() == 1) {
-            map.setStyle(Style.MAPBOX_STREETS, style -> {
+            map.setStyle(com.mapbox.mapboxsdk.maps.Style.MAPBOX_STREETS, style -> {
                 tvLatlong.setTextColor(getResources().getColor(R.color.black, null));
 
 
@@ -1253,7 +1246,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
         } else if (floatNumber.getType() == 2) {
             tvLatlong.setTextColor(getResources().getColor(R.color.white, null));
 
-            map.setStyle(Style.SATELLITE, style -> {
+            map.setStyle(com.mapbox.mapboxsdk.maps.Style.SATELLITE, style -> {
                 PreferenceManager.updateValue(Constant.KEY_MAP_STYLE_ID, 1);
                 PreferenceManager.updateValue(Constant.KEY_MAPBOX_STYLE_VALUE, getResources().getString(R.string.mapbox_style_satellite));
 
@@ -1264,7 +1257,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
 
         } else if (floatNumber.getType() == 3) {
             tvLatlong.setTextColor(getResources().getColor(R.color.white, null));
-            map.setStyle(Style.SATELLITE_STREETS, style -> {
+            map.setStyle(com.mapbox.mapboxsdk.maps.Style.SATELLITE_STREETS, style -> {
                 PreferenceManager.updateValue(Constant.KEY_MAP_STYLE_ID, 2);
                 PreferenceManager.updateValue(Constant.KEY_MAPBOX_STYLE_VALUE, getResources().getString(R.string.mapbox_style_satellite_streets));
 
@@ -1273,7 +1266,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
             });
 
         } else if (floatNumber.getType() == 4) {
-            map.setStyle(Style.OUTDOORS, style -> {
+            map.setStyle(com.mapbox.mapboxsdk.maps.Style.OUTDOORS, style -> {
                 tvLatlong.setTextColor(getResources().getColor(R.color.black, null));
                 PreferenceManager.updateValue(Constant.KEY_MAP_STYLE_ID, 3);
                 PreferenceManager.updateValue(Constant.KEY_MAPBOX_STYLE_VALUE, getResources().getString(R.string.mapbox_style_outdoors));
@@ -1286,7 +1279,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
             layoutMenuContent.setVisibility(View.VISIBLE);*/
             if (bottomFragment != null) {
                 if (bottomFragment.isVisible()) {
-                    Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction().hide(bottomFragment).commit();
+                    requireActivity().getSupportFragmentManager().beginTransaction().hide(bottomFragment).commit();
                 }
             }
             layoutMenuContent.setVisibility(View.VISIBLE);
@@ -1332,7 +1325,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
     }
 
     private void getTripMarkerList(TripMarkerGetModel tripMarkerGetModel, boolean isInitialLoad) {
-        map.clear();
+        if(map!=null)map.clear();
         Intent intent = new Intent(getActivity(), RouteReconIntentService.class);
         intent.setAction(RouteReconIntentService.ACTION_GET_TRIP_MARKER);
         Bundle bundle = new Bundle();
@@ -1356,7 +1349,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
                 }
             }
         });
-        Objects.requireNonNull(getActivity()).startService(intent);
+        requireActivity().startService(intent);
     }
 
 
@@ -1383,7 +1376,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
     }
 
     private void loadMarker() {
-        List<MarkerDescription> markerDescriptionList = AppDatabase.getAppDatabase(Objects.requireNonNull(getActivity()).getApplicationContext()).daoMarker().fetchMarkerByTripId(String.valueOf(0));
+        List<MarkerDescription> markerDescriptionList = AppDatabase.getAppDatabase(requireActivity().getApplicationContext()).daoMarker().fetchMarkerByTripId(String.valueOf(0));
         if (markerDescriptionList != null && markerDescriptionList.size() > 0) {
             for (MarkerDescription markerDescription : markerDescriptionList) {
                 if (markerDescription.getMarkType() == 1) {
@@ -1624,13 +1617,13 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
                                 .build();
                         WorkManager.getInstance().enqueue(addMarkerWorker);
 
-                        WorkManager.getInstance().getWorkInfoByIdLiveData(addMarkerWorker.getId()).observe(Objects.requireNonNull(getActivity()), workInfo -> {
+                        WorkManager.getInstance().getWorkInfoByIdLiveData(addMarkerWorker.getId()).observe(requireActivity(), workInfo -> {
                             if (workInfo != null && workInfo.getState().isFinished()) {
                                 switch (type) {
                                     case 1:
                                         map.addMarker(new MarkerOptions()
                                                 .position(pointLatLong)
-                                                .setTitle(Utils.getAddress(pointLatLong.getLatitude(), pointLatLong.getLongitude(), true, Objects.requireNonNull(getActivity()).getApplicationContext()))
+                                                .setTitle(Utils.getAddress(pointLatLong.getLatitude(), pointLatLong.getLongitude(), true, requireActivity().getApplicationContext()))
                                                 .setSnippet(String.valueOf(data.getSuccess().getMarkerID()))
                                                 .icon(safeIcon));
                                         fragmentActivityCommunication.showProgressDialog(false);
@@ -1638,7 +1631,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
                                     case 2:
                                         map.addMarker(new MarkerOptions()
                                                 .position(pointLatLong)
-                                                .setTitle(Utils.getAddress(pointLatLong.getLatitude(), pointLatLong.getLongitude(), true, Objects.requireNonNull(getActivity()).getApplicationContext()))
+                                                .setTitle(Utils.getAddress(pointLatLong.getLatitude(), pointLatLong.getLongitude(), true, requireActivity().getApplicationContext()))
                                                 .setSnippet(String.valueOf(data.getSuccess().getMarkerID()))
                                                 .icon(landmarkIcon));
                                         fragmentActivityCommunication.showProgressDialog(false);
@@ -1656,7 +1649,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
 
                                     case 4:
                                         //hazard
-                                        map.clear();
+                                        if(map!=null)map.clear();
                                         loadMarker();
                                         OUTER_POINTS.clear();
                                         fragmentActivityCommunication.showProgressDialog(false);
@@ -1712,7 +1705,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
     }
 
     @SuppressWarnings({"MissingPermission"})
-    private void enableLocationComponent(@NonNull Style loadedMapStyle) {
+    private void enableLocationComponent(Style loadedMapStyle) {
         if (PermissionsManager.areLocationPermissionsGranted(RouteApplication.getInstance().getApplicationContext())) {
             locationComponent = map.getLocationComponent();
             locationComponent.activateLocationComponent(RouteApplication.getInstance().getApplicationContext(), loadedMapStyle);
@@ -1771,8 +1764,14 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
     private void loadMapData() {
         sharedViewModel.getSelected().observe(this, mapData -> {
             if (map != null) {
-                map.setStyle(mapData.getStyle(), style -> {
+               /* map.setStyle(mapData.getStyle(), style -> {
                     EventBus.getDefault().post(mapData);
+                });*/
+                map.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
+                    @Override
+                    public void onStyleLoaded(@NonNull Style style) {
+                        EventBus.getDefault().post(mapData);
+                    }
                 });
             }
         });
@@ -1856,7 +1855,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
 
                         } else {
 
-                            map.clear();
+                            if(map!=null)map.clear();
                             loadMarker();
 
                         }
@@ -2562,7 +2561,7 @@ public class MapFragment extends Fragment implements PermissionsListener, View.O
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void changeDistanceUnitType(DistanceUnitObject distanceUnitObject) {
 
-        map.clear();
+        if(map!=null)map.clear();
 
 
 

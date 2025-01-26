@@ -2210,26 +2210,30 @@ public class ApiCaller implements ApiService {
     @Override
     public void getSubscriptionStatus(String token, SubscriptionModel subscriptionModel, ResponseCallback<SubscriptionResponse> responseCallback) {
         ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
-        apiInterface.getSubscriptionStatus(token, subscriptionModel).enqueue(new Callback<SubscriptionResponse>() {
-            @Override
-            public void onResponse(@NotNull Call<SubscriptionResponse> call, @NotNull Response<SubscriptionResponse> response) {
-                if (response.isSuccessful()) {
-                    if (response.body() != null) {
-                        responseCallback.onSuccess(response.body());
-                    } else {
-                        String errorMessage = Utils.showErrorMessage(response);
-                        responseCallback.onError(new Exception(errorMessage));
+        try {
+            apiInterface.getSubscriptionStatus(token, subscriptionModel).enqueue(new Callback<SubscriptionResponse>() {
+                @Override
+                public void onResponse(@NotNull Call<SubscriptionResponse> call, @NotNull Response<SubscriptionResponse> response) {
+                    if (response.isSuccessful()) {
+                        if (response.body() != null) {
+                            responseCallback.onSuccess(response.body());
+                        } else {
+                            String errorMessage = Utils.showErrorMessage(response);
+                            responseCallback.onError(new Exception(errorMessage));
+                        }
                     }
+
                 }
 
-            }
+                @Override
+                public void onFailure(@NotNull Call<SubscriptionResponse> call, @NotNull Throwable t) {
+                    responseCallback.onError(t);
 
-            @Override
-            public void onFailure(@NotNull Call<SubscriptionResponse> call, @NotNull Throwable t) {
-                responseCallback.onError(t);
-
-            }
-        });
+                }
+            });
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

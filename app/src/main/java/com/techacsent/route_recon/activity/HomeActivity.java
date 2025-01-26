@@ -1,11 +1,14 @@
 package com.techacsent.route_recon.activity;
 
+import static androidx.core.content.ContentProviderCompat.requireContext;
+
 import android.Manifest;
 
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -48,9 +51,11 @@ import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 import io.github.rupinderjeet.kprogresshud.KProgressHUD;
+
+import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.location.LocationComponent;
 import com.nabinbhandari.android.permissions.PermissionHandler;
 import com.nabinbhandari.android.permissions.Permissions;
@@ -123,7 +128,7 @@ public class HomeActivity extends BaseActivity implements FragmentActivityCommun
         setContentView(R.layout.activity_home);
         homeActivityViewModel = ViewModelProviders.of(this).get(HomeActivityViewModel.class);
         locationService = new LocationService(this);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         deleteToken();
         initGoogleAPIClient();
@@ -254,11 +259,7 @@ public class HomeActivity extends BaseActivity implements FragmentActivityCommun
 
     private void deleteToken() {
         new Thread(() -> {
-            try {
-                FirebaseInstanceId.getInstance().deleteInstanceId();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            FirebaseMessaging.getInstance().deleteToken();
         }).start();
     }
 
@@ -363,7 +364,7 @@ public class HomeActivity extends BaseActivity implements FragmentActivityCommun
     private void showBadge(BottomNavigationView bottomNavigationView, @IdRes int itemId, String value) {
 
         Log.e("HomeActi", "showBadge "+value );
-        BottomNavigationItemView itemView = bottomNavigationView.findViewById(itemId);
+        @SuppressLint("RestrictedApi") BottomNavigationItemView itemView = bottomNavigationView.findViewById(itemId);
         View badge = LayoutInflater.from(getApplicationContext()).inflate(R.layout.layout_notification_badge, bottomNavigationView, false);
 
         TextView text = badge.findViewById(R.id.badge_text_view);
@@ -372,7 +373,7 @@ public class HomeActivity extends BaseActivity implements FragmentActivityCommun
     }
 
     private void removeBadge(BottomNavigationView bottomNavigationView, @IdRes int itemId) {
-        BottomNavigationItemView itemView = bottomNavigationView.findViewById(itemId);
+        @SuppressLint("RestrictedApi") BottomNavigationItemView itemView = bottomNavigationView.findViewById(itemId);
 
         Timber.d("%s", itemView.getChildCount());
         if (itemView.getChildCount() == 3) {

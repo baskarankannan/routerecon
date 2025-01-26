@@ -54,6 +54,7 @@ public class ApiClient {
                 .connectTimeout(140, TimeUnit.SECONDS)
                 .readTimeout(140, TimeUnit.SECONDS)
                 .writeTimeout(140, TimeUnit.SECONDS)
+                .hostnameVerifier(new CustomHostnameVerifier())
                 .build();
 
 
